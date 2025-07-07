@@ -1,19 +1,22 @@
-# Chat App - Week 3 (Structured Version)
+# Week 3 - Real-time Chat App (Go + WebSocket + Redis)
 
-This version is split into folders for better readability and maintainability.
+Ứng dụng chat thời gian thực sử dụng WebSocket và Redis.
 
-## Structure
-- `controllers/` – WebSocket & HTTP handlers
-- `models/` – Structs for Message & Client
-- `middlewares/` – Rate limiter
-- `utils/` – Redis initialization
-- `main.go` – Bootstraps the server
+## ✅ Tính năng
+- Nhắn tin realtime giữa nhiều client
+- Hiển thị user đang online
+- Lưu lịch sử tin nhắn bằng Redis
+- Giới hạn tốc độ gửi để chống spam
 
-## Run
+## 🧰 Công nghệ
+- [Gin](https://github.com/gin-gonic/gin): router nhẹ
+- [gorilla/websocket](https://github.com/gorilla/websocket): giao tiếp realtime
+- [Redis](https://redis.io): lưu online & message history
+- [rate limiter](https://pkg.go.dev/golang.org/x/time/rate): giới hạn spam
 
-```bash
-go mod tidy
-go run main.go
-```
-
-Ensure Redis is running on localhost:6379.
+## 📡 WebSocket
+- Kết nối WebSocket:
+ws://localhost:8080/ws/{username}
+- Gửi tin nhắn:
+```json
+{ "content": "hello" }
