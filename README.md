@@ -2,13 +2,13 @@
 
 Ứng dụng chat thời gian thực sử dụng WebSocket và Redis.
 
-## ✅ Tính năng
+## Tính năng
 - Nhắn tin realtime giữa nhiều client
 - Hiển thị user đang online
 - Lưu lịch sử tin nhắn bằng Redis
 - Giới hạn tốc độ gửi để chống spam
 
-## 🧰 Công nghệ
+## Công nghệ
 - [Gin](https://github.com/gin-gonic/gin): router nhẹ
 - [gorilla/websocket](https://github.com/gorilla/websocket): giao tiếp realtime
 - [Redis](https://redis.io): lưu online & message history
